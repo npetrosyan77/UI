@@ -12,7 +12,7 @@ global.creds1 = customerInfo();
 
 describe('Customer login flow', () => {
     before(() => {
-        cy.visit("/")
+        cy.visit('/')
     })
 
     it('Should check customer login flow', () => {
