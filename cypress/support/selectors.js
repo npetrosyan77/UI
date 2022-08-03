@@ -1,5 +1,6 @@
 export const Selectors = () => {
     return {
+
         bankManagerloginBtn: '.center [ng-click="manager()"]',
         header: '.mainHeading',
         addCustomerBtn: '.tab:nth-child(1)',

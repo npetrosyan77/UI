@@ -20,7 +20,6 @@ export const PageStatus = class PageStatus {
     }
 }
 
-
 export const FiledStatus = class FiledStatus {
     static filed() {
         return {
