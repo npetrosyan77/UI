@@ -23,7 +23,6 @@ describe('Checking deposit/withdraw functionality', () => {
         cy.visit('/')
     })
 
-
     it('Check that deposit functionality works correctly', () => {
         CommonMethods.clickElement(selectors.bankManagerloginBtn)
         cy.createNewCustomer(1)

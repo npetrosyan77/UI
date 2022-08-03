@@ -38,7 +38,6 @@ describe('Customer adding and login flow', () => {
         customerInfoCheck.notExist(1)
     });
 
-
     it('Should check field validation message', () => {
         CommonMethods.clickElement(selectors.bankManagerloginBtn)
         CommonMethods.clickElement(selectors.addCustomerBtn)

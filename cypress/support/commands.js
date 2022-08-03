@@ -13,7 +13,6 @@ export const customerInfo = () => {
     }
 }
 
-
 Cypress.Commands.add('createNewCustomer', (arg) => {
     cy.get('.btn-lg[ng-click="manager()"]').click()
     cy.get('.tab:nth-child(1)').click()

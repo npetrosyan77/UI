@@ -18,5 +18,4 @@ class CommonMethods{
 
 }
 
-
 export default CommonMethods;

@@ -63,7 +63,6 @@ class Customer {
             cy.log(accountNumber)
             cy.get('.ng-untouched').clear().type(accountNumber)
             cy.get('tbody tr td:nth-child(4)').should('contain', accountNumber)
-
         })
     }
 

@@ -15,7 +15,6 @@ describe('Customer login flow', () => {
         cy.visit("/")
     })
 
-
     it('Should check customer login flow', () => {
         cy.createNewCustomer(1);
         CommonMethods.clickElement(selectors.homeBtn)

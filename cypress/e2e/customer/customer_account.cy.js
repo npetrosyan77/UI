@@ -12,7 +12,6 @@ describe('Open account flow', () => {
         cy.visit('/')
     })
 
-
     it('Check that  correct currency added for customer', ()=>{
         cy.createNewCustomer(1)
         CommonMethods.clickElement(selectors.openAccountBtn)
