@@ -5,11 +5,15 @@ class CommonMethods{
     }
 
     static fillInField(field, value){
-    cy.get(field).clear().type(value);
+        cy.get(field).clear().type(value);
     }
 
     static selectFromDropdown(arg1, arg2) {
         cy.get(arg1).select(arg2)
+    }
+
+    static clearField(arg){
+        cy.get(arg).clear()
     }
 
 }

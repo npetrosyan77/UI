@@ -14,13 +14,13 @@ describe('Open account flow', () => {
 
 
     it('Check that  correct currency added for customer', ()=>{
-        cy.createNewCustomer(creds1.firstName, creds1.lastName, creds1.postCode)
+        cy.createNewCustomer(1)
         CommonMethods.clickElement(selectors.openAccountBtn)
         Customer.customerList(`${creds1.firstName + ' ' + creds1.lastName}`)
         CommonMethods.selectFromDropdown(selectors.customerDropdown, `${creds1.firstName + ' ' + creds1.lastName}`)
         Customer.selectCurrency()
         CommonMethods.clickElement(selectors.processBtn)
-        cy.loginCustomer()
+        cy.loginCustomer(1)
     })
 
 })

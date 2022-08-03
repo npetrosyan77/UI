@@ -34,7 +34,7 @@ describe('Customer adding and login flow', () => {
         })
         CommonMethods.clickElement(selectors.customersBtn)
         customerInfoCheck.checkingInfo(1)
-        customerInfoCheck.deleteCustomer('tbody tr td:nth-child(1)', creds1.firstName)
+        customerInfoCheck.deleteCustomer(1)
         customerInfoCheck.notExist(1)
     });
 

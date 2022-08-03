@@ -1,6 +1,6 @@
 export const Selectors = () => {
     return {
-        bankManagerloginBtn: '.btn-lg[ng-click="manager()"]',
+        bankManagerloginBtn: '.center [ng-click="manager()"]',
         header: '.mainHeading',
         addCustomerBtn: '.tab:nth-child(1)',
         fnameFiled: '[ng-model="fName"]',
@@ -17,6 +17,14 @@ export const Selectors = () => {
         openAccountBtn: '.tab:nth-child(2)',
         currencyDropdown: '#currency',
         processBtn: '[type="submit"]',
-
+        searchFiled: '.ng-untouched',
+        depositBtn: '[ng-click="deposit()"]',
+        amountField: '[ng-model="amount"]',
+        depositSubmitBtn: '[type="submit"]',
+        transactionsBtn: '[ng-click="transactions()"]',
+        transactionTable: '.table-striped tbody tr',
+        withdrawalBtn: '[ng-click="withdrawl()"]',
+        withdrawalSubmitBtn: '[type="submit"]',
+        backBtn: '[ng-click="back()"]'
     };
 };

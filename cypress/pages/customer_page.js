@@ -12,8 +12,9 @@ class Customer {
         cy.get('tbody tr td:nth-child(3)').should('not.contain', window[`creds${arg}`].postCode)
     }
 
-    static deleteCustomer(arg1, arg2){
-        cy.get(arg1).contains(arg2).siblings('td')
+    static deleteCustomer(arg){
+        cy.get('tbody tr td:nth-child(1)').contains(window[`creds${arg}`].firstName)
+            .siblings('td')
             .find('[ng-click="deleteCust(cust)"]')
             .click()
     }
@@ -36,14 +37,48 @@ class Customer {
         let currency = currencies.length
         console.log(currency)
         const i = Math.floor(Math.random() * currency)
-        const option = currencies[i]
+        global.option = currencies[i]
         cy.get('#currency').select(`${option}`)
     }
 
     static checkSelectedCurrency(){
-
+        cy.get('.center .ng-binding').last().should('contain', option)
     }
-}
 
+    static customerTable(arg1, arg2, arg3){
+        cy.get('tbody tr').should('have.length', arg1)
+        cy.get(`tbody tr td:nth-child(${arg2})`).contains(arg3)
+    }
+
+    static gettingAccountNumber(arg){
+        cy.get('.tab:nth-child(2)').click()
+        cy.get('#userSelect')
+            .select(window[`creds${arg}`].firstName + ' ' + window[`creds${arg}`].lastName)
+        this.selectCurrency()
+        cy.get('[type="submit"]').click()
+        cy.get('.tab:nth-child(3)').click()
+        cy.get('.ng-untouched').type(window[`creds${arg}`].firstName)
+        cy.get('tbody tr td:nth-child(4)').then(($accountNumber) =>{
+            global.accountNumber = $accountNumber.text()
+            cy.log(accountNumber)
+            cy.get('.ng-untouched').clear().type(accountNumber)
+            cy.get('tbody tr td:nth-child(4)').should('contain', accountNumber)
+
+        })
+    }
+
+    static openAccount(arg){
+        cy.get('.tab:nth-child(2)').click()
+        cy.get('#userSelect')
+            .select(window[`creds${arg}`].firstName + ' ' + window[`creds${arg}`].lastName)
+        this.selectCurrency()
+        cy.get('[type="submit"]').click()
+    }
+
+    static checkBalance(arg){
+        cy.get('.center .ng-binding:nth-child(2)').should("contain", arg)
+    }
+
+}
 
 export default Customer;

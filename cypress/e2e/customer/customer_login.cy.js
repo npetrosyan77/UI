@@ -17,7 +17,7 @@ describe('Customer login flow', () => {
 
 
     it('Should check customer login flow', () => {
-        cy.createNewCustomer(creds1.firstName, creds1.lastName, creds1.postCode);
+        cy.createNewCustomer(1);
         CommonMethods.clickElement(selectors.homeBtn)
         CommonMethods.clickElement(selectors.customerLoginBtn)
         customerInfoCheck.customersDropdown()
@@ -30,7 +30,7 @@ describe('Customer login flow', () => {
         CommonMethods.clickElement(selectors.bankManagerloginBtn)
         CommonMethods.clickElement(selectors.customersBtn)
         customerInfoCheck.checkingInfo(1)
-        customerInfoCheck.deleteCustomer('tbody tr td:nth-child(1)', creds1.firstName)
+        customerInfoCheck.deleteCustomer(1)
         customerInfoCheck.notExist(1)
     })
 })
