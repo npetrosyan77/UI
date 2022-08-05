@@ -29,17 +29,17 @@ jobs:
           record: true
       - run: npx cypress run --record --key 1aac12fe-4319-4625-8dff-4ba2a6736717
 
-      - uses: actions/upload-artifact@v2
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      # Test run video was always captured, so this action uses "always()" condition
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
+#      - uses: actions/upload-artifact@v2
+#        if: failure()
+#        with:
+#          name: cypress-screenshots
+#          path: cypress/screenshots
+#      # Test run video was always captured, so this action uses "always()" condition
+#      - uses: actions/upload-artifact@v2
+#        if: always()
+#        with:
+#          name: cypress-videos
+#          path: cypress/videos
 
 
       # Runs a single command using the runners shell
