@@ -12,13 +12,13 @@ jobs:
       - with:
           start: npm start
           record: true
-
+        env:
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Run a one-line script
         run: echo Hello, world!
-        env:
-             CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-             GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
