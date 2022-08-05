@@ -16,7 +16,7 @@ jobs:
           name: cypress-screenshots
           path: cypress/screenshots
       - uses: actions/upload-artifact@v1
-        if: failrue()
+        if: failure()
         with:
           name: cypress-videos
           path: cypress/videos  
