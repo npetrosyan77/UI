@@ -6,9 +6,9 @@ name: Cypress tests
 on:
   # Triggers the workflow on push or pull request events but only for the "API" branch
   push:
-    branches: [ "API" ]
+    branches: [ "UI-Tasks" ]
   pull_request:
-    branches: [ "API" ]
+    branches: [ "UI-Tasks" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
