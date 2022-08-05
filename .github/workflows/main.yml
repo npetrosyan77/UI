@@ -1,26 +1,21 @@
 
 name: CI
 
-on:
-  push:
-    branches: [ "UI-Tasks" ]
-  pull_request:
-    branches: [ "UI-Tasks" ]
-
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  build:
+  cypress-run:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - uses: cypress-io/github-action@v4.1.0
-#      - with:
-#          record: true
-#          env:
-#            CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-#            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - with:
+          start: npm start
+          record: true
+
+      -  env:
+           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Run a one-line script
         run: echo Hello, world!
