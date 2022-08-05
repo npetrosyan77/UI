@@ -6,6 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login",
-    projectId: "qvd6ft"
+    projectId: "qvd6ft",
+    defaultCommandTimeout: 10000
   },
 });
