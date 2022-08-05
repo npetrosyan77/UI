@@ -10,7 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: cypress-io/github-action@v4.1.0
-      - run: npx cypress run --record --key 1aac12fe-4319-4625-8dff-4ba2a6736717
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - uses: actions/upload-artifact@v1
+        if: failrue()
+        with:
+          name: cypress-videos
+          path: cypress/videos  
+          
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
