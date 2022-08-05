@@ -7,6 +7,6 @@ module.exports = defineConfig({
     },
     baseUrl: "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login",
     projectId: "qvd6ft",
-    defaultCommandTimeout: 10000
+    defaultCommandTimeout: 15000
   },
 });
