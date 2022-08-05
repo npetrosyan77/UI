@@ -4,11 +4,11 @@ name: Cypress tests
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "UI-Tasks" branch
+  # Triggers the workflow on push or pull request events but only for the "API" branch
   push:
-    branches: [ "UI-Tasks" ]
+    branches: [ "UI-TASKS" ]
   pull_request:
-    branches: [ "UI-Tasks" ]
+    branches: [ "UI-TASKS" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,9 +22,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - uses: cypress-io/github-action@v4.1.0
-       - run: npx cypress run --record --key 1aac12fe-4319-4625-8dff-4ba2a6736717
+      - run: npx cypress run --record --key 1aac12fe-4319-4625-8dff-4ba2a6736717
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
